@@ -12,3 +12,4 @@ Tech stack chosen:
 - UI
   - Theme: Material UI
   - Others: DX React Chart
+- Pre-commit tool: husky
