@@ -5,6 +5,8 @@ import { AuthState } from '../../stores/reducers/auth.reducer';
 import { isAuthed } from '../../utils/auth.util';
 import userProfile from '../../assets/images/user.png';
 
+let text;
+
 const Toolbar = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
 
