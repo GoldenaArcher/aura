@@ -1,18 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router';
 import { AppState } from '../../stores/reducers';
 import { AuthState } from '../../stores/reducers/auth.reducer';
 import { isAuthed } from '../../utils/auth.util';
+import userProfile from '../../assets/images/user.png';
 
-const Dashboard = () => {
+const Toolbar = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
 
   const isLoggedIn = isAuthed(auth);
 
-  if (!isLoggedIn) return <Navigate replace to="/" />;
+  if (isLoggedIn) return <>'logged in'</>;
 
-  return <div>Dashboard</div>;
+  return <div className="user-profile__img">
+      <img src={userProfile} alt="user profile img" />
+  </div>;
 };
 
-export default Dashboard;
+export default Toolbar;
