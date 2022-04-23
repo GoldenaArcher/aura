@@ -5,8 +5,6 @@ import { AuthState } from '../../stores/reducers/auth.reducer';
 import { isAuthed } from '../../utils/auth.util';
 import userProfile from '../../assets/images/user.png';
 
-let text;
-
 const Toolbar = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
 
@@ -14,9 +12,11 @@ const Toolbar = () => {
 
   if (isLoggedIn) return <>'logged in'</>;
 
-  return <div className="user-profile__img">
+  return (
+    <div className="user-profile__img">
       <img src={userProfile} alt="user profile img" />
-  </div>;
+    </div>
+  );
 };
 
 export default Toolbar;

@@ -12,7 +12,7 @@ const Login = () => {
 
   if (isLoggedIn) return <Navigate replace to="/dashboard" />;
 
-  return <div className='login'>Login</div>
+  return <div className="login">Login</div>;
 };
 
 export default Login;
