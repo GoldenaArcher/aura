@@ -1,1 +1,6 @@
 @import './variables';
+@import './reset';
+
+// components
+@import '../ui/header/header';
+@import '../ui/toolbar/toolbar';
