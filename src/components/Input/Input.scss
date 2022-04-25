@@ -1,0 +1,29 @@
+.input {
+  &__field {
+    text-transform: capitalize;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+
+
+  &__error {
+    // width: 1rem;
+    margin-top: 4px;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    &__icon {
+      width: 1rem;
+      width: 1rem;
+      object-fit: fill;
+      margin-right: 4px;
+    }
+  }
+}
