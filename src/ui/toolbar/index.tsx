@@ -12,9 +12,11 @@ const Toolbar = () => {
 
   if (isLoggedIn) return <>'logged in'</>;
 
-  return <div className="user-profile__img">
+  return (
+    <div className="user-profile__img">
       <img src={userProfile} alt="user profile img" />
-  </div>;
+    </div>
+  );
 };
 
 export default Toolbar;
