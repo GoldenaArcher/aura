@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { TextField } from '@mui/material';
+import './_input.scss';
 
 type InputPropType = {
   className?: string;
@@ -6,10 +8,7 @@ type InputPropType = {
   errorMessage?: string;
 };
 
-const Input = ({
-  className,
-  placeholder = 'placeholder'
-}: InputPropType) => {
+const Input = ({ className, placeholder = 'Placeholder' }: InputPropType) => {
   const [value, setValue] = useState('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -17,15 +16,14 @@ const Input = ({
   }
 
   return (
-    <div className="input__container">
-      <input
-        placeholder={placeholder}
-        className={'input__field ' + className}
-        value={value}
-        onChange={handleChange}
-      />
-    </div>
+    <TextField
+      variant="outlined"
+      label={placeholder}
+      className={className}
+      value={value}
+      onChange={handleChange}
+    />
   );
-}
+};
 
 export default Input;
