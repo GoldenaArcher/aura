@@ -6,7 +6,8 @@ import { Button, ButtonProps } from '@mui/material';
 
 interface IProps extends ButtonProps {
     buttonType?: string,
-    buttonInput?: string
+    buttonInput?: string,
+    onclick?: Function
 }
 
 const ButtonUi: FC<IProps> = ({
@@ -15,6 +16,7 @@ const ButtonUi: FC<IProps> = ({
   children,
   size,
   disabled,
+  onclick,
   buttonInput,
   buttonType = '',
   ...rest
@@ -27,13 +29,13 @@ const ButtonUi: FC<IProps> = ({
 
     const renderBtn = () => {
         if (btnState.buttonType === 'login') {
-            return <Button variant='contained' color='primary' size={size} disabled={disabled} sx={{ bgcolor: 'linear-gradient(to right, $blue-700, $blue-200)', '&:hover': { bgcolor: 'linear-gradient(to right, $blue-700, $blue-200)'} }}>Login</Button>
+            return <Button onClick={() => onclick} variant='contained' color='primary' size={size} disabled={disabled} sx={{ bgcolor: 'linear-gradient(to right, $blue-700, $blue-200)', '&:hover': { bgcolor: 'linear-gradient(to right, $blue-700, $blue-200)'} }}>Login</Button>
         } 
         else if (btnState.buttonType === 'gmail') {
-            return <Button variant='outlined' color='error' size={size} disabled={disabled}><SvgGmail/><span className='gmail__span'>Gmail</span></Button>
+            return <Button onClick={() => onclick} variant='outlined' color='error' size={size} disabled={disabled}><SvgGmail/><span className='gmail__span'>Gmail</span></Button>
         }
         else if (btnState.buttonType === 'other') {
-            return <Button variant='contained' color='primary' size={size} disabled={disabled}>{btnState.buttonInput}</Button>
+            return <Button onClick={() => onclick} variant='contained' color='primary' size={size} disabled={disabled}>{btnState.buttonInput}</Button>
         }
         else {
             return null

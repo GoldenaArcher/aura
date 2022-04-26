@@ -1,0 +1,12 @@
+.input {
+  &__field {
+    text-transform: capitalize;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+}
