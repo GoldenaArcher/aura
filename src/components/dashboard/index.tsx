@@ -13,9 +13,11 @@ const Dashboard = () => {
 
   if (!isLoggedIn) return <Navigate replace to="/" />;
 
-  return <div>
-    <Header />
-  </div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default Dashboard;
