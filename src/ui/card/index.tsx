@@ -23,8 +23,8 @@ const Card = ({
     <Paper elevation={elevation}>
       <MUICard
         className={
-          `card ${shadow && 'card--shadow '}${
-            transparent && 'card--transparent '
+          `card ${shadow ? 'card--shadow' : ''}${
+            transparent ? 'card--transparent ' : ''
           }` + className
         }
         style={{ backgroundColor: backgroundColor }}
