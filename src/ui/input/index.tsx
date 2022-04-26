@@ -6,10 +6,7 @@ type InputPropType = {
   errorMessage?: string;
 };
 
-const Input = ({
-  className,
-  placeholder = 'placeholder'
-}: InputPropType) => {
+const Input = ({ className, placeholder = 'placeholder' }: InputPropType) => {
   const [value, setValue] = useState('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -26,6 +23,6 @@ const Input = ({
       />
     </div>
   );
-}
+};
 
 export default Input;
