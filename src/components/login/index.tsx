@@ -6,17 +6,25 @@ import { Link } from 'react-router-dom';
 import { AppState } from '../../stores/reducers';
 import { AuthState } from '../../stores/reducers/auth.reducer';
 import Input from '../../ui/input';
-import { isAuthed } from '../../utils/auth.util';
+import { authUser, isAuthed } from '../../utils/auth.util';
 
 import logo from '../../assets/svg/aura-logo-icon.svg';
-import { login } from '../../stores/actions/auth.action';
+import { login, loginSuccess } from '../../stores/actions/auth.action';
 
 const Login = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
   const dispatch = useDispatch();
 
-  const loginHandler = () => {
-    dispatch(login({ email: 'dummy email', password: 'dummy password' }));
+  const loginHandler = async () => {
+    const dymmyData = { email: 'dummy email', password: 'dummy password' };
+
+    dispatch(login(dymmyData));
+
+    const isLoggedIn = await authUser(dymmyData);
+
+    if (isLoggedIn) {
+      dispatch(loginSuccess());
+    }
   };
 
   const isLoggedIn = isAuthed(auth);
