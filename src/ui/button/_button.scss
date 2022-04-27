@@ -9,6 +9,10 @@
 .MuiButton-root.gmail__btn {
   color: $google-red;
   border-color: $google-red;
+  text-transform: lowercase;
+  ::first-letter {
+    text-transform: uppercase;
+  }
   * {
     display: block;
   }
