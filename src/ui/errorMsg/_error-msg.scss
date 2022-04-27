@@ -1,0 +1,13 @@
+.error-msg {
+  margin: 0.5em 0;
+  color: $error;
+  span {
+    display: block;
+  }
+  .error-msg__icon {
+    margin-right: 0.4em;
+  }
+  .error-msg__text {
+    margin-top: 0.1em;
+  }
+}
