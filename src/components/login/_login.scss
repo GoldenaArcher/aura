@@ -2,5 +2,34 @@
   height: 100vh;
   background-image: url('../../assets/images/shutterstock_363952133.jpg');
   background-size: cover;
-  opacity: 0.5;
+  padding: 0;
+  .transparent__bg {
+    background-color: $blue-400-transparent;
+    height: 100vh;
+  }
+
+  .login__form {
+    height: 100vh;
+    .MuiGrid-container {
+      width: 30em;
+      background-color: #fff;
+    }
+    .MuiGrid-item {
+      padding-left: 0;
+      width: 100%;
+    }
+    .grid__item__divider {
+      padding-left: 0;
+    }
+    .flex {
+      padding: 1em 1em 0 1em;
+    }
+  }
+  .logo__img {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  .logo__img img {
+    width: 12em;
+  }
 }
