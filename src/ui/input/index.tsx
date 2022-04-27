@@ -4,7 +4,6 @@ import ErrorMsg from '../errorMsg';
 
 type InputPropType = {
   className?: string;
-  errorMessage?: string;
   value?: string;
   onChangeHandler?: ChangeEventHandler<HTMLInputElement>;
   errorMsg?: string;
@@ -12,7 +11,6 @@ type InputPropType = {
 
 const Input = ({
   className,
-  errorMessage,
   onChangeHandler,
   value,
   errorMsg,
