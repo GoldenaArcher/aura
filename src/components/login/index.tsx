@@ -15,15 +15,12 @@ const Login = () => {
 
   return (
     <div className="login">
-      <Card
-        transparent={true}
-        borderRadius={CardBoardRadius.Large}
-      >
+      <Card transparent={true} borderRadius={CardBoardRadius.Large}>
         <>
-        <h2>outer card</h2>
-        <Card borderRadius={CardBoardRadius.Large}>
-          <p>inner card</p>
-        </Card>
+          <h2>outer card</h2>
+          <Card borderRadius={CardBoardRadius.Large}>
+            <p>inner card</p>
+          </Card>
         </>
       </Card>
     </div>
