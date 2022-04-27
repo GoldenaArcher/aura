@@ -9,8 +9,8 @@
     display: flex;
   }
   .login__body {
-    width: 35em;
-    height: 40em;
+    width: 30%;
+    height: 60%;
     margin: 0 auto;
   }
 
@@ -32,6 +32,18 @@
     }
     .grid__item__divider {
       padding-left: 0;
+    }
+    .forget-pwd {
+      text-decoration: none;
+      color: $gray-100;
+    }
+    .MuiDivider-root {
+      margin: 0;
+    }
+    .login-alt {
+      font-weight: 700;
+      color: $gray-300;
+      margin: 0;
     }
   }
   .logo__img {
