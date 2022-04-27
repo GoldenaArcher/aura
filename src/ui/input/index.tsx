@@ -1,27 +1,44 @@
-import React, { useState } from 'react';
+import React, { ChangeEventHandler } from 'react';
+import { TextField, TextFieldProps } from '@mui/material';
+import ErrorMsg from '../errorMsg';
 
 type InputPropType = {
   className?: string;
-  placeholder?: any;
-  errorMessage?: string;
+  value?: string;
+  onChangeHandler?: ChangeEventHandler<HTMLInputElement>;
+  errorMsg?: string;
+  placeholder?: string;
 };
 
-const Input = ({ className, placeholder = 'placeholder' }: InputPropType) => {
-  const [value, setValue] = useState('');
+const Input = ({
+  className,
+  onChangeHandler,
+  value,
+  errorMsg,
+  placeholder,
+  ...rest
+}: InputPropType) => {
+  const classNames = ['aura__input', className];
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value);
+  const inputFields: TextFieldProps = {
+    variant: 'outlined',
+    className: classNames.join(' '),
+    onChange: undefined,
+  };
+
+  if (onChangeHandler) {
+    inputFields.onChange = onChangeHandler;
+  }
+
+  if (value !== undefined) {
+    inputFields.value = value;
   }
 
   return (
-    <div className="input__container">
-      <input
-        placeholder={placeholder}
-        className={'input__field ' + className}
-        value={value}
-        onChange={handleChange}
-      />
-    </div>
+    <>
+      <TextField {...inputFields} {...rest} />
+      {errorMsg && <ErrorMsg errorMsg={errorMsg} />}
+    </>
   );
 };
 
