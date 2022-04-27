@@ -8,7 +8,10 @@
   border-radius: 1em;
 }
 .MuiPaper-root.aura__card-radius-large {
-  border-radius: 1.5em;
+  border-radius: 2em;
+}
+.MuiPaper-root.aura__card-radius-x-large {
+  border-radius: 4em;
 }
 .MuiPaper-root.aura__card-transparent {
   background-color: $black-transparent;

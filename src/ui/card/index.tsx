@@ -9,6 +9,7 @@ export enum CardBoardRadius {
   Small = 'small',
   Medium = 'medium',
   Large = 'large',
+  XLarge = 'x-large'
 }
 
 type CardPropType = {

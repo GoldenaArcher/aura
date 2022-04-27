@@ -34,42 +34,53 @@ const Login = () => {
 
   return (
     <Container className="login" maxWidth={false} style={{ padding: 0 }}>
-      <Container className="transparent__bg" maxWidth={false}>
-        <Stack
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          className="login__form"
+      <Container className="transparent__bg center-align" maxWidth={false}>
+        <Card
+          transparent={true}
+          className="login__body flex"
+          borderRadius={CardBoardRadius.XLarge}
         >
-          <Container className="logo__img">
-            <img src={logo} alt="aura logo" />
-          </Container>
-          <Grid container spacing={2} direction="column">
-            <Grid item>
-              <Input placeholder="Email Address" />
-            </Grid>
-            <Grid item>
-              <Input placeholder="Password" />
-            </Grid>
-            <Grid item>
-              <button onClick={loginHandler}>LOGIN</button>
-            </Grid>
-            <Grid item className="flex justify-end">
-              <Link to={'/reset-password'} className="forget-pwd">
-                Forgot Password?
-              </Link>
-            </Grid>
-            <Grid item className="grid__item__divider">
-              <Divider variant="middle" />
-            </Grid>
-            <Grid item>
-              <p>Login using</p>
-            </Grid>
-            <Grid item>
-              <button>Gmail</button>
-            </Grid>
-          </Grid>
-        </Stack>
+          <Stack
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            className="login__form"
+          >
+            <Container className="logo__img">
+              <img src={logo} alt="aura logo" />
+            </Container>
+            <Card
+              className="login__form__body"
+              borderRadius={CardBoardRadius.Large}
+            >
+              <Grid container spacing={2} direction="column">
+                <Grid item>
+                  <Input placeholder="Email Address" />
+                </Grid>
+                <Grid item>
+                  <Input placeholder="Password" />
+                </Grid>
+                <Grid item>
+                  <button onClick={loginHandler}>LOGIN</button>
+                </Grid>
+                <Grid item className="flex justify-end">
+                  <Link to={'/reset-password'} className="forget-pwd">
+                    Forgot Password?
+                  </Link>
+                </Grid>
+                <Grid item className="grid__item__divider">
+                  <Divider variant="middle" />
+                </Grid>
+                <Grid item>
+                  <p>Login using</p>
+                </Grid>
+                <Grid item>
+                  <button>Gmail</button>
+                </Grid>
+              </Grid>
+            </Card>
+          </Stack>
+        </Card>
       </Container>
     </Container>
   );
