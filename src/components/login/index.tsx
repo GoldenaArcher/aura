@@ -5,6 +5,7 @@ import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AppState } from '../../stores/reducers';
 import { AuthState } from '../../stores/reducers/auth.reducer';
+import Card, { CardBoardRadius } from '../../ui/card';
 import Input from '../../ui/input';
 import { authUser, isAuthed } from '../../utils/auth.util';
 
