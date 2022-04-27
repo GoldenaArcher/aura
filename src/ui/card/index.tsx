@@ -9,6 +9,7 @@ type CardPropType = {
   elevation?: number;
   shadow?: boolean;
   transparent?: boolean;
+  padding?: string;
 };
 
 const Card = ({
@@ -18,16 +19,17 @@ const Card = ({
   elevation = 0,
   shadow = false,
   transparent = false,
+  padding = "1rem"
 }: CardPropType) => {
   return (
-    <Paper elevation={elevation}>
+    <Paper style={{backgroundColor: "transparent",border:"none"}}>
       <MUICard
         className={
           `card ${shadow ? 'card--shadow' : ''}${
             transparent ? 'card--transparent ' : ''
           }` + className
         }
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: backgroundColor, padding: padding }}
         variant="outlined"
       >
         {children}

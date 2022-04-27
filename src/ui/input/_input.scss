@@ -1,12 +1,10 @@
-.input {
-  &__field {
-    text-transform: capitalize;
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 10px;
+.input__field {
+  text-transform: capitalize;
+  border-radius: 20px !important;
+  width: 100%;
+  box-sizing: border-box;
 
-    &::placeholder {
-      color: black;
-    }
+  &::placeholder {
+    color: black;
   }
 }
