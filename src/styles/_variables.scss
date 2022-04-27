@@ -8,19 +8,25 @@
 .center-align {
   align-items: center;
 }
+.justify-end {
+  justify-content: end;
+}
 
 // theme
 $white: #fff !default;
 $black: #1b1b1b !default;
+$black-transparent: #1b1b1b66 !default;
 $pink: #f7776e !default;
 
 $gray-100: #939393 !default;
 $gray-200: #888 !default;
+$gray-300: #777;
 
 $blue-100: #00b1ff !default;
 $blue-200: #0a95e2 !default;
 $blue-300: #0579ab !default;
 $blue-400: #186c96 !default;
+$blue-400-transparent: #186c9666 !default;
 $blue-500: #0b578b !default;
 $blue-600: #0c4e80 !default;
 $blue-700: #153261 !default;
@@ -28,4 +34,8 @@ $blue-700: #153261 !default;
 $success: #55c125 !default;
 $error: #de4453 !default;
 
+$google-red: #de4739;
+$google-red-transparent: #de473911;
+
 $header-graident: linear-gradient(to right, $blue-700, $blue-200);
+$login-btn-gradient: linear-gradient(to right, $blue-300, $blue-200);

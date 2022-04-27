@@ -1,24 +1,18 @@
-
-$gray-100: #939393 !default;
-$blue-400-transparent: #186c9666 !default;
-
-.card {
-    padding: 1rem;
-    display: grid;
-    place-items: center;
-    border-radius: 1rem !important;
-
-    &--light {
-        background-color: white;
-        box-shadow: 0 0 20px 0 lightgray;
-    }
-    
-    &--transparent {
-        opacity: 0.3;
-    }
-    
-    &--shadow {
-        box-shadow: 0 0 20px 0 $gray-100;
-    }
-
-} 
+.aura__card {
+  padding: 1em;
+}
+.MuiPaper-root.aura__card-radius-small {
+  border-radius: 0.5em;
+}
+.MuiPaper-root.aura__card-radius-medium {
+  border-radius: 1em;
+}
+.MuiPaper-root.aura__card-radius-large {
+  border-radius: 2em;
+}
+.MuiPaper-root.aura__card-radius-x-large {
+  border-radius: 4em;
+}
+.MuiPaper-root.aura__card-transparent {
+  background-color: $black-transparent;
+}
