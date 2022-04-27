@@ -1,5 +1,5 @@
 import { Container, Divider, Grid, Stack } from '@mui/material';
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -11,12 +11,15 @@ import { authUser, isAuthed } from '../../utils/auth.util';
 
 import logo from '../../assets/svg/aura-logo-icon.svg';
 import { login, loginSuccess } from '../../stores/actions/auth.action';
+import LoginButton from '../../ui/button/loginButton';
+import GmailButton from '../../ui/button/gmailButton';
 
 const Login = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
   const dispatch = useDispatch();
 
-  const loginHandler = async () => {
+  const loginHandler = async (e: MouseEvent<Element, MouseEvent>) => {
+    e.preventDefault();
     const dymmyData = { email: 'dummy email', password: 'dummy password' };
 
     dispatch(login(dymmyData));
@@ -61,7 +64,7 @@ const Login = () => {
                   <Input placeholder="Password" />
                 </Grid>
                 <Grid item>
-                  <button onClick={loginHandler}>LOGIN</button>
+                  <LoginButton onClick={loginHandler} />
                 </Grid>
                 <Grid item className="flex justify-end">
                   <Link to={'/reset-password'} className="forget-pwd">
@@ -75,7 +78,7 @@ const Login = () => {
                   <p>Login using</p>
                 </Grid>
                 <Grid item>
-                  <button>Gmail</button>
+                  <GmailButton />
                 </Grid>
               </Grid>
             </Card>

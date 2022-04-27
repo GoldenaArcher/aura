@@ -50,7 +50,7 @@ const Card = ({
   }
 
   // make sure customized classname is always appended at the end so that it can be overwritten
-  classNames.push(className);
+  classNames.push(className || '');
   return <MUICard className={classNames.join(' ')}>{children}</MUICard>;
 };
 

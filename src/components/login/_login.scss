@@ -17,6 +17,7 @@
   .login__form {
     width: 100%;
     position: relative;
+    padding: 1em 1em 0 1em;
     .login__form__body {
       padding: 3em;
       box-sizing: border-box;
@@ -31,9 +32,6 @@
     }
     .grid__item__divider {
       padding-left: 0;
-    }
-    .flex {
-      padding: 1em 1em 0 1em;
     }
   }
   .logo__img {
