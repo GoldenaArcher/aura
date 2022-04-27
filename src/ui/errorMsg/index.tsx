@@ -1,11 +1,11 @@
 import React from 'react';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
-type IErrorMsgType = {
+type ErrorMsgType = {
   errorMsg: string;
 };
 
-const ErrorMsg = ({ errorMsg }: IErrorMsgType) => {
+const ErrorMsg = ({ errorMsg }: ErrorMsgType) => {
   return (
     <div className="flex error-msg">
       <span className="error-msg__icon">

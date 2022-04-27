@@ -5,14 +5,26 @@
   padding: 0;
   .transparent__bg {
     background-color: $blue-400-transparent;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+  }
+  .login__body {
+    width: 35em;
+    height: 40em;
+    margin: 0 auto;
   }
 
   .login__form {
-    height: 100vh;
-    .MuiGrid-container {
-      width: 30em;
-      background-color: #fff;
+    width: 100%;
+    position: relative;
+    padding: 1em 1em 0 1em;
+    .login__form__body {
+      padding: 3em;
+      box-sizing: border-box;
+      width: 90%;
+      height: 80%;
+      position: absolute;
+      bottom: -1em;
     }
     .MuiGrid-item {
       padding-left: 0;
@@ -21,12 +33,10 @@
     .grid__item__divider {
       padding-left: 0;
     }
-    .flex {
-      padding: 1em 1em 0 1em;
-    }
   }
   .logo__img {
-    margin-bottom: 2em;
+    position: absolute;
+    top: 1.5em;
     text-align: center;
   }
   .logo__img img {

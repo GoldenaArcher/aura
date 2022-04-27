@@ -1,0 +1,27 @@
+.MuiButton-root.arua__btn {
+  width: 100%;
+  padding: 1em 0;
+  border-radius: 0.8em;
+}
+.MuiButton-root.login__btn {
+  background-image: $login-btn-gradient;
+}
+.MuiButton-root.gmail__btn {
+  color: $google-red;
+  border-color: $google-red;
+  text-transform: lowercase;
+  ::first-letter {
+    text-transform: uppercase;
+  }
+  * {
+    display: block;
+  }
+  .btn__icon {
+    width: 2em;
+    margin-right: 1em;
+  }
+  &:hover {
+    border-color: $google-red;
+    background-color: $google-red-transparent;
+  }
+}

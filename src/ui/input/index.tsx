@@ -36,7 +36,7 @@ const Input = ({
 
   return (
     <>
-      <TextField {...inputFields} {...rest} />
+      <TextField {...inputFields} {...rest} placeholder={placeholder} />
       {errorMsg && <ErrorMsg errorMsg={errorMsg} />}
     </>
   );
