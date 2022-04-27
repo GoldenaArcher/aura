@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
-import { TextField } from '@mui/material';
+import React, { ChangeEventHandler } from 'react';
+import { TextField, TextFieldProps } from '@mui/material';
 import './_input.scss';
 
 type InputPropType = {
   className?: string;
-  placeholder?: any;
   errorMessage?: string;
+  value?: string;
+  onChangeHandler?: ChangeEventHandler<HTMLTextAreaElement>;
 };
 
-const Input = ({ className, placeholder = 'Placeholder' }: InputPropType) => {
-  const [value, setValue] = useState('');
+const Input = ({
+  className,
+  errorMessage,
+  onChangeHandler,
+  value,
+  ...rest
+}: InputPropType) => {
+  const classNames = ['aura__input', className];
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setValue(e.target.value);
+  const inputFields: TextFieldProps = {
+    variant: 'outlined',
+    className: classNames.join(' '),
+    onChange: undefined,
+  };
+
+  if (onChangeHandler) {
+    inputFields.onChange = onChangeHandler;
   }
 
-  return (
-    <TextField
-      variant="outlined"
-      label={placeholder}
-      className={className}
-      value={value}
-      onChange={handleChange}
-    />
-  );
+  if (value) {
+    inputFields.value = value;
+  }
+
+  return <TextField {...inputFields} {...rest} />;
 };
 
 export default Input;
