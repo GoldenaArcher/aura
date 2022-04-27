@@ -14,26 +14,55 @@ import { login, loginSuccess } from '../../stores/actions/auth.action';
 import LoginButton from '../../ui/button/loginButton';
 import GmailButton from '../../ui/button/gmailButton';
 
+import { loginMock, getErrorMessage } from '../../api/auth.api';
+
 const Login = () => {
-  const auth = useSelector<AppState, AuthState>((state) => state.auth);
-  const dispatch = useDispatch();
+  // const auth = useSelector<AppState, AuthState>((state) => state.auth);
+  // const dispatch = useDispatch();
+
+  function generateMockUser() {
+    return {
+      email: "test@antra.com",
+      passWord: "test",
+      jwt:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGFudHJhLmNvbSIsIm5hbWUiOiJ0ZXN0IiwidXNlcklkIjoiMTIzMjEzMTIiLCJpYXQiOjE1MTYyMzkwMjJ9.XxBVHmaT7wGOlb9zGR7CSdQ7ZAvDx4Rqlt1trv9rmTU"
+    };
+  }
+
+  // const mockLogin = () => {
+  //   let user = generateMockUser();
+
+  //   loginMock(user).then(res => getErrorMessage(res.errorCode)).then(res => console.log(res))
+  // }
 
   const loginHandler = async (e: MouseEvent<Element, MouseEvent>) => {
     e.preventDefault();
-    const dymmyData = { email: 'dummy email', password: 'dummy password' };
 
-    dispatch(login(dymmyData));
+    // const mockUser = {
+    //   userName: "test@antra.com",
+    //   passWord: "test",
+    //   jwt:
+    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGFudHJhLmNvbSIsIm5hbWUiOiJ0ZXN0IiwidXNlcklkIjoiMTIzMjEzMTIiLCJpYXQiOjE1MTYyMzkwMjJ9.XxBVHmaT7wGOlb9zGR7CSdQ7ZAvDx4Rqlt1trv9rmTU"
+    // };
 
-    const isLoggedIn = await authUser(dymmyData);
 
-    if (isLoggedIn) {
-      dispatch(loginSuccess());
-    }
+    const dymmyData = { email: "test@antra.com", passWord: "wrong", jwt:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGFudHJhLmNvbSIsIm5hbWUiOiJ0ZXN0IiwidXNlcklkIjoiMTIzMjEzMTIiLCJpYXQiOjE1MTYyMzkwMjJ9.XxBVHmaT7wGOlb9zGR7CSdQ7ZAvDx4Rqlt1trv9rmTU" };
+
+    // dispatch(login(dymmyData));
+
+    // mockLogin()
+    loginMock(dymmyData).then(res => getErrorMessage(res.errorCode)).then(res => console.log(res))
+
+    // const isLoggedIn = await authUser(dymmyData);
+
+    // if (isLoggedIn) {
+    //   dispatch(loginSuccess());
+    // }
   };
 
-  const isLoggedIn = isAuthed(auth);
+  // const isLoggedIn = isAuthed(auth);
 
-  if (isLoggedIn) return <Navigate replace to="/dashboard" />;
+  // if (isLoggedIn) return <Navigate replace to="/dashboard" />;
 
   return (
     <Container className="login" maxWidth={false} style={{ padding: 0 }}>
