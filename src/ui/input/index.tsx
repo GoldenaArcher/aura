@@ -1,12 +1,13 @@
 import React, { ChangeEventHandler } from 'react';
 import { TextField, TextFieldProps } from '@mui/material';
-import './_input.scss';
+import ErrorMsg from '../errorMsg';
 
 type InputPropType = {
   className?: string;
   errorMessage?: string;
   value?: string;
-  onChangeHandler?: ChangeEventHandler<HTMLTextAreaElement>;
+  onChangeHandler?: ChangeEventHandler<HTMLInputElement>;
+  errorMsg?: string;
 };
 
 const Input = ({
@@ -14,6 +15,7 @@ const Input = ({
   errorMessage,
   onChangeHandler,
   value,
+  errorMsg,
   ...rest
 }: InputPropType) => {
   const classNames = ['aura__input', className];
@@ -28,11 +30,16 @@ const Input = ({
     inputFields.onChange = onChangeHandler;
   }
 
-  if (value) {
+  if (value !== undefined) {
     inputFields.value = value;
   }
 
-  return <TextField {...inputFields} {...rest} />;
+  return (
+    <>
+      <TextField {...inputFields} {...rest} />
+      {errorMsg && <ErrorMsg errorMsg={errorMsg} />}
+    </>
+  );
 };
 
 export default Input;
