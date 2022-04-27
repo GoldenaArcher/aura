@@ -75,7 +75,7 @@ const Login = () => {
                   <Divider variant="middle" />
                 </Grid>
                 <Grid item>
-                  <p>Login using</p>
+                  <p className='login-alt'>Login using</p>
                 </Grid>
                 <Grid item>
                   <GmailButton />
