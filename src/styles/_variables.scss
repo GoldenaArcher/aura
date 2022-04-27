@@ -8,6 +8,9 @@
 .center-align {
   align-items: center;
 }
+.justify-end {
+  justify-content: end;
+}
 
 // theme
 $white: #fff !default;
@@ -21,6 +24,7 @@ $blue-100: #00b1ff !default;
 $blue-200: #0a95e2 !default;
 $blue-300: #0579ab !default;
 $blue-400: #186c96 !default;
+$blue-400-transparent: #186c9666 !default;
 $blue-500: #0b578b !default;
 $blue-600: #0c4e80 !default;
 $blue-700: #153261 !default;

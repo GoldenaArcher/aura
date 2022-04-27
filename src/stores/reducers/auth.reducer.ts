@@ -44,7 +44,7 @@ export default function authReducer(
         ...state,
         login: {
           success: false,
-          messate: '',
+          message: '',
         },
       };
     default:

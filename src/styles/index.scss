@@ -1,8 +1,11 @@
 @import './reset';
 @import './variables';
 
-// components
+// UI components
 @import '../ui/header/header';
 @import '../ui/toolbar/toolbar';
+
+// component
+@import '../components/login/login';
 @import '../ui/input/input';
 @import '../ui/errorMsg/error-msg';

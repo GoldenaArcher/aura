@@ -7,6 +7,7 @@ type InputPropType = {
   value?: string;
   onChangeHandler?: ChangeEventHandler<HTMLInputElement>;
   errorMsg?: string;
+  placeholder?: string;
 };
 
 const Input = ({
@@ -14,6 +15,7 @@ const Input = ({
   onChangeHandler,
   value,
   errorMsg,
+  placeholder,
   ...rest
 }: InputPropType) => {
   const classNames = ['aura__input', className];
