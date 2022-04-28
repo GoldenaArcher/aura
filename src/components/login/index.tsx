@@ -1,5 +1,5 @@
 import { Container, Divider, Grid, Stack } from '@mui/material';
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -25,10 +25,12 @@ const Login = () => {
 
   //   loginMock(user).then(res => getErrorMessage(res.errorCode)).then(res => console.log(res))
   // }
+  const [errorMessage, setErrorMessage] = useState('')
+  const [loadState, setLoadState] = useState(false)
 
   const loginHandler = async (e: MouseEvent<Element, MouseEvent>) => {
     e.preventDefault();
-
+    setLoadState(true)
     // const mockUser = {
     //   userName: "test@antra.com",
     //   passWord: "test",
@@ -41,7 +43,33 @@ const Login = () => {
     // dispatch(login(dymmyData));
 
     // mockLogin()
-    loginMock(dymmyData).then(res => getErrorMessage(res.errorCode)).then(res => console.log(res))
+    loginMock(dymmyData).then(res => {
+      setLoadState(false)
+      if (res.errorCode === +0 ) {
+        let jwt = res.result.jwt
+          /*useJWT(jwt)*/
+          return jwt
+      }
+      else {
+        return getErrorMessage(res.errorCode);
+      }
+      // else {
+      //   throw new Error("Error")
+      // }
+
+    }).then((res) => {
+      if (typeof res === 'object') {
+        let errorStr = res.result
+        setErrorMessage(errorStr)
+        console.log(res)
+      } 
+      else if (typeof res === 'string') {
+        alert("JWT Provided")
+        // someJWTFunction(res)
+      }
+    })
+    // getErrorMessage(res.errorCode)
+    
 
     // const isLoggedIn = await authUser(dymmyData);
 
@@ -77,10 +105,10 @@ const Login = () => {
             >
               <Grid container spacing={2} direction="column">
                 <Grid item>
-                  <Input placeholder="Email Address" />
+                  <Input placeholder="Email Address"/>
                 </Grid>
                 <Grid item>
-                  <Input placeholder="Password" />
+                  <Input placeholder="Password" errorMsg={errorMessage}/>
                 </Grid>
                 <Grid item>
                   <LoginButton onClick={loginHandler} />
