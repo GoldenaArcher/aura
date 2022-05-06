@@ -2,6 +2,9 @@
 .flex {
   display: flex;
 }
+.space-around {
+  justify-content: space-around;
+}
 .space-between {
   justify-content: space-between;
 }
@@ -10,6 +13,15 @@
 }
 .justify-end {
   justify-content: end;
+}
+// .justify-center{
+//   justify-content: center;
+// }
+.mt-1 {
+  margin-top: 1.2rem
+}
+.rounded {
+  border-radius: 10px
 }
 
 // theme
