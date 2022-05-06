@@ -6,18 +6,18 @@ import {
   Chart,
   ArgumentAxis,
   ValueAxis,
-//   AreaSeries,
   LineSeries,
   ScatterSeries,
   Title,
-//   Legend,
   Tooltip
 } from '@devexpress/dx-react-chart-material-ui';
 import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
 import { styled } from '@mui/material/styles';
 import { scalePoint } from 'd3-scale';
 
-import { EventTracker, HoverState, SelectionState } from '@devexpress/dx-react-chart';
+import { EventTracker, HoverState } from '@devexpress/dx-react-chart';
+
+import ChartTitle from '../chartTitle';
 
 const data = [
   { month: 'Jan', android: 4 },
@@ -49,19 +49,19 @@ const StyledChartRoot = styled(Chart.Root)(() => ({
 }));
 
 const ChartRoot = props => (
-  <StyledChartRoot {...props} className={classes.chart} sx={{backgroundColor: "#00b1ff", color: "white"}} />
+  <StyledChartRoot {...props} className={classes.chart} sx={{backgroundColor: "#00b1ff", color: "#00b1ff"}} />
 );
 
 export default class ActiveEmployeesChart extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   data,
-    //   hover: undefined
-    // };
+    /* this.state = {
+      data,
+      hover: undefined
+    };
+    this.changeHover = hover => this.setState({ hover }); */
 
-    // this.changeHover = hover => this.setState({ hover });
     this.state = {
         data,
       };
@@ -72,6 +72,8 @@ export default class ActiveEmployeesChart extends React.PureComponent {
     const { data: chartData } = this.state;
 
     return (
+      <div className="">
+        <ChartTitle title="Total Active Employees" total={350}></ChartTitle>
       <Paper>
         <Chart
           data={chartData}
@@ -107,6 +109,7 @@ export default class ActiveEmployeesChart extends React.PureComponent {
           />
         </Chart>
       </Paper>
+      </div>
     );
   }
 }

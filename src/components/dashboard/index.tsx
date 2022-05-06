@@ -11,7 +11,6 @@ import { isAuthed } from '../../utils/auth.util';
 import NewHiresChart from '../../ui/newHiresChart';
 import ActiveEmployeesChart from '../../ui/activeEmployeesChart';
 import AttritionRate from '../../ui/attritionRateChart';
-import LoginButton from '../../ui/button/loginButton';
 
 const Dashboard = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);

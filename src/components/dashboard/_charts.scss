@@ -1,24 +1,14 @@
 .charts {
     height: 200px;
-    // margin: 10px;
     width: calc(2.8/4 * 100%);
-
 }
 
 .chart__container {
     width: calc(.97/3 * 100%);
-    // background-color: red;
-    // border: 2px solid blue;
-    // color: white;
 }
-
-// .chart__container > * > * {
-//     height: 50px
-// }
 
 .calendar {
     height: 800px;
-    // margin: 10px;
     width: calc(1/4 * 100%);
     background-color: rgb(189, 189, 189);
 }

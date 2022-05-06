@@ -18,8 +18,7 @@ import { styled } from '@mui/material/styles';
 
 import { EventTracker, HoverState } from '@devexpress/dx-react-chart';
 
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-// for chart title
+import ChartTitle from '../chartTitle';
 
 const data = [
   { key: 'Jan', value: 4 },
@@ -68,10 +67,7 @@ export default class AttritionRate extends React.PureComponent {
 
     return (
       <div className="">
-        {/* <div className="chart-title">
-          <h1>100 <ArrowUpwardIcon/></h1>
-          <p>Attrition Rate</p>
-        </div> */}
+        <ChartTitle title="Attrition Rate" total={100}></ChartTitle>
       <Paper>
         <Chart
           data={data}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC } from 'react';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 type ChartTitleProps = {
@@ -6,8 +6,7 @@ type ChartTitleProps = {
     title: string
 }
 
-const ChartTitle: ChartTitleProps = (props) => {
-    // const [total, setTotal] = useState({})
+const ChartTitle: FC<ChartTitleProps> = (props) => {
 
     return (
         <div className="chart-title">
