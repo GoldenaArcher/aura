@@ -18,6 +18,9 @@ import { styled } from '@mui/material/styles';
 
 import { EventTracker, HoverState } from '@devexpress/dx-react-chart';
 
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+// for chart title
+
 const data = [
   { key: 'Jan', value: 4 },
   { key: 'Feb', value: 3 },
@@ -33,7 +36,7 @@ const data = [
   { key: 'December', value: 8 },
 ];
 
-const PREFIX = 'Demo';
+const PREFIX = 'AttritionRate';
 
 const classes = {
   chart: `${PREFIX}-chart`,
@@ -41,12 +44,14 @@ const classes = {
 
 const StyledChartRoot = styled(Chart.Root)(() => ({
   [`&.${classes.chart}`]: {
-    paddingRight: '20px',
+    paddingRight: '50px',
+    paddingLeft: '50px',
+    borderRadius: '10px',
   },
 }));
 
 const ChartRoot = props => (
-  <StyledChartRoot {...props} className={classes.chart} sx={{backgroundColor: "#f7776e", color: "white"}} />
+  <StyledChartRoot {...props} className={classes.chart} sx={{backgroundColor: "#f7776e", color: "#f7776e"}} />
 );
 
 export default class AttritionRate extends React.PureComponent {
@@ -62,10 +67,16 @@ export default class AttritionRate extends React.PureComponent {
     const { data } = this.state;
 
     return (
+      <div className="">
+        {/* <div className="chart-title">
+          <h1>100 <ArrowUpwardIcon/></h1>
+          <p>Attrition Rate</p>
+        </div> */}
       <Paper>
         <Chart
           data={data}
           rootComponent={ChartRoot}
+          height={200}
         >
           <ArgumentAxis showGrid={false} showLine={false} showTicks={false} showLabels={false}/>
           <ValueAxis showGrid={false} showLine={false} showTicks={false} showLabels={false}/>
@@ -79,7 +90,7 @@ export default class AttritionRate extends React.PureComponent {
           <Animation />
           
           <Title
-            text="Total Active Employees"
+            text="Attrition Rate"
           />
           <EventTracker />
           <HoverState  />
@@ -88,6 +99,7 @@ export default class AttritionRate extends React.PureComponent {
           />
         </Chart>
       </Paper>
+    </div>
     );
   }
 }

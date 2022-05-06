@@ -170,16 +170,6 @@ import { scalePoint } from 'd3-scale';
 import { EventTracker, HoverState, SelectionState } from '@devexpress/dx-react-chart';
 
 const data = [
-//   { year: '2010', android: 67225, ios: 46598 },
-//   { year: '2011', android: 179873, ios: 90560 },
-//   { year: '2012', android: 310088, ios: 118848 },
-//   { year: '2015', android: 539318, ios: 189924 },
-
-//   { year: '2010', android: 67225 },
-//   { year: '2011', android: 179873},
-//   { year: '2012', android: 310088},
-//   { year: '2015', android: 539318},
-
   { month: 'Jan', android: 4 },
   { month: 'Feb', android: 3 },
   { month: 'March', android: 4 },
@@ -194,7 +184,7 @@ const data = [
   { month: 'December', android: 8 },
 ];
 
-const PREFIX = 'Demo';
+const PREFIX = 'NewHiresChart';
 
 const classes = {
   chart: `${PREFIX}-chart`,
@@ -202,7 +192,7 @@ const classes = {
 
 const StyledChartRoot = styled(Chart.Root)(() => ({
   [`&.${classes.chart}`]: {
-    paddingRight: '20px',
+    borderRadius: '10px',
   },
 }));
 
@@ -219,7 +209,7 @@ const LegendItem = props => (
   <Legend.Item {...props} sx={{ flexDirection: 'column' }} />
 );
 
-export default class Demo extends React.PureComponent {
+export default class NewHiresChart extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -243,6 +233,7 @@ export default class Demo extends React.PureComponent {
         <Chart
           data={chartData}
           rootComponent={ChartRoot}
+          height={200}
         >
           <ArgumentScale factory={scalePoint} />
           <ArgumentAxis showGrid={false} showLine={false} showTicks={false} showLabels={false}/>

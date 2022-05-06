@@ -34,7 +34,7 @@ const data = [
   { month: 'December', android: 8 },
 ];
 
-const PREFIX = 'Demo';
+const PREFIX = 'ActiveEmployeesChart';
 
 const classes = {
   chart: `${PREFIX}-chart`,
@@ -42,7 +42,9 @@ const classes = {
 
 const StyledChartRoot = styled(Chart.Root)(() => ({
   [`&.${classes.chart}`]: {
-    paddingRight: '20px',
+    paddingRight: '50px',
+    paddingLeft: '50px',
+    borderRadius: '10px',
   },
 }));
 
@@ -74,6 +76,7 @@ export default class ActiveEmployeesChart extends React.PureComponent {
         <Chart
           data={chartData}
           rootComponent={ChartRoot}
+          height={200}
         >
           <ArgumentScale factory={scalePoint} />
           <ArgumentAxis showGrid={false} showLine={false} showTicks={false} showLabels={false}/>
@@ -92,7 +95,7 @@ export default class ActiveEmployeesChart extends React.PureComponent {
           />
           <Animation />
           <Title
-            text="Total New Hires"
+            text="Total Active Employees"
           />
           <EventTracker />
           {/* <HoverState  hover={hover} onHoverChange={this.changeHover}/> */}

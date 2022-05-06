@@ -8,9 +8,10 @@ import { AuthState } from '../../stores/reducers/auth.reducer';
 import Header from '../../ui/header';
 import { isAuthed } from '../../utils/auth.util';
 
-import Demo from '../../ui/newHiresChart';
+import NewHiresChart from '../../ui/newHiresChart';
 import ActiveEmployeesChart from '../../ui/activeEmployeesChart';
 import AttritionRate from '../../ui/attritionRateChart';
+import LoginButton from '../../ui/button/loginButton';
 
 const Dashboard = () => {
   const auth = useSelector<AppState, AuthState>((state) => state.auth);
@@ -22,15 +23,21 @@ console.log("update")
   return (
     <div>
       <Header />
-      <div className='charts flex space-between'>
-        {/* <div className='chart__container'>
-          <ActiveEmployeesChart/>
-        </div> */}
-        {/* <div className='chart__container'>
-          <Demo/>
-        </div> */}
-        <div className='chart__container'>
-          <AttritionRate />
+      <div className='flex space-around mt-1'>
+        <div className='charts flex space-between'>
+          <div className='chart__container'>
+            <ActiveEmployeesChart/>
+          </div>
+          <div className='chart__container'>
+            <NewHiresChart/>
+          </div>
+          <div className='chart__container'>
+            <AttritionRate />
+          </div>
+        </div>
+
+        <div className='calendar'>
+          Brandon's Code
         </div>
       </div>
     </div>
