@@ -67,7 +67,7 @@ export default class AttritionRate extends React.PureComponent {
 
     return (
       <div className="">
-        <ChartTitle title="Attrition Rate" total={100}></ChartTitle>
+        <ChartTitle title="Attrition Rate" total={14}></ChartTitle>
       <Paper>
         <Chart
           data={data}
